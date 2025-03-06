@@ -1,0 +1,139 @@
+@use "variables" as *;
+@use "typography" as *;
+@use "placeholders" as *;
+
+/* Implemented a placeholder */
+.article-container-left,
+.article-container-right {
+    @extend %article-base;
+	border-bottom-color: var(--bottom-border-color);
+}
+
+#featureArticle{
+	@extend %article-base;
+	border-width: 3px;
+	border-bottom-color: var(--brand-color);
+}
+
+/*Hides the excerpt, category, and tags from the half-article when viewed on mobile */
+/* Implemented attribute selector*/
+#half-article p[class='excerpt'],
+#half-article p[class='category'],
+#half-article p[class='tags']{
+	display: none;
+}
+
+/*Hides the side bar articles when viewed on mobile */
+#sidebarArticles{
+    display:none;
+}
+
+@media (min-width: 760px) {
+
+	/* Displays the side bar articles when viewed on desktop */
+	#sidebarArticles{
+		display:block;
+	}
+
+    .article-container-left,
+    .article-container-right {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 20px;
+		align-items: center;
+		margin-left: 70px;
+		margin-right: 70px;
+		margin-top: 50px;
+		border: 1px solid $border-color;
+		padding: 0;
+		min-height: 350px;
+	}
+
+	/*Implemented a descendant selector */
+  	.article-container-left .image{
+		display: flex;
+		justify-content: center;
+	}
+	/* Implemented an inheritance with @extend */
+  	.text-content {
+		flex: 1;
+		margin-left: 10%;
+		margin-right: 10%;
+	}
+
+	.text-content-right{
+		@extend .text-content;
+		order: 1;
+	}
+
+	.text-content h2 {
+		font-size: 24px;
+		margin-bottom: 20px;
+	}
+  
+	.text-content p,
+	.text-content-right p{
+		font-size: 18px;
+	}
+
+	.image img {
+		max-width: 100%;
+		height: 100%;
+		object-fit: contain;
+		padding: 10px;
+	}
+
+/* Styling the side bar */
+	#sidebarArticles > div {
+		border-bottom: 1px solid $border-color;
+		padding-left: 25px;
+        margin-top: 50px;
+	}
+
+/* On desktop view, it will display the numbering system in the side bar section */
+	.circle {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		background-color: var(--brand-color);
+		border-radius: 50%;
+		text-align: center;
+		line-height: 30px;
+		color: white; 
+		font-size: small;
+		font-weight: bold;
+		margin-right: 6px; 
+		margin-left: 5px;
+	}
+
+/* On desktop view, it will display the excerpt, category, and tags and hide the border line under the feature article */
+	#half-article p[class='excerpt']{
+		display: block;
+	}
+	#half-article p[class='category']{
+		display: block;
+	}
+	#half-article p[class='tags']{
+		display: block;
+	}
+	#featureArticle{
+		border-bottom: none;
+	}
+
+/* Implemented adjacent selector */
+	.text-content + .image,
+	.text-content-right + .image {
+		border: 2px solid var(--brand-color); 
+	}
+
+/* Implemented sibling selector + mixins */
+	.excerpt ~ .published-date{
+		@include common-bolded-style;
+		font-style: italic;
+	}
+
+	#featureArticle .published-date,
+	#featureArticle .author {
+		@include common-bolded-style;
+	}
+}

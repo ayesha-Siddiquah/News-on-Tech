@@ -1,0 +1,89 @@
+@use "variables" as *;
+@use "nav" as *;
+@use "animation" as *;
+@use "header" as *;
+@use "hamburger" as *;
+@use "typography" as *;
+@use "articles" as *;
+@use "placeholders" as *;
+
+html {
+	box-sizing: border-box;
+  }
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	line-height: 1;
+	margin: 0;
+	background-color: white;
+}
+
+img {
+	max-width: 100%;
+	height: auto;	
+}
+
+/* Implemented three css variables */
+:root{
+	--brand-color: #154569;
+	--trans-Time: 1;
+	--bottom-border-color:#1545696b;
+}
+
+.wrapper {
+	width:100%;
+	height: 100vw;
+	background-color: white;
+	display: grid;
+	grid-template-rows: 3;	
+}
+/*Implemented child selector */
+.wrapper > header{
+	grid-row-start: 1;
+}
+.wrapper > main{
+	grid-row-start: 2;
+}
+.wrapper > footer{
+	grid-row-start: 3;
+	justify-self: center;
+	padding: 20px ;
+}
+
+/*Styling the clickable links + implemented mixins*/
+a {
+	@include common-bolded-style;
+}
+
+a:hover {
+	color: var(--brand-color);
+}
+
+@media (min-width: 760px) {
+
+/* Styling the top page */
+	main{
+		padding: 20px;
+		display: grid;
+		grid-template-columns: 1;
+		grid-template-rows: 2;
+	}
+/* Implemented pseudo selectors */
+	#topPage{
+		display: grid;
+		gap : 40px;
+		grid-template-columns: 3fr 2fr;
+		grid-template-rows: 1;
+		margin-top: 20px;
+	}
+	#topPage :nth-child(1){
+		grid-column-start: 1;
+		grid-row-start: 1;
+	}
+	#topPage :nth-child(2){
+		grid-column-start: 2;
+		grid-row-start: 1;
+	}
+}

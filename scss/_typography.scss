@@ -1,0 +1,8 @@
+/* Declaring a mixin directive with mixin name */
+
+@mixin common-bolded-style {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+  }
+  

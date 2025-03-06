@@ -1,0 +1,18 @@
+/* Displays a side to side animated movement for the logo when the page opens */
+#logodiv {
+	animation: moveForward 5s linear alternate; 
+}
+  
+@keyframes moveForward {
+	0% {
+	  transform: translateX(0);
+	}
+
+	50% {
+	  transform: translateX(100%); /* Adjust the value to control the distance */
+	}
+	
+	100% {
+	transform: translateX(0); /* Adjust the value to control the distance */
+	}
+}

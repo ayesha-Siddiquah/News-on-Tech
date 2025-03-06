@@ -1,0 +1,33 @@
+header{
+	display: grid;
+	grid-template-rows: 2;
+	grid-template-columns: 1;
+}
+
+header >:nth-child(1){
+	grid-row-start: 1;
+	grid-column-start: 1;
+}
+header >:nth-child(2){
+	grid-row-start: 1;
+	grid-column-start: 1;
+	justify-self: right;
+	margin-top: 20px;
+}
+
+header >:nth-child(3){
+	grid-row-start: 2;
+	grid-column-start: 1;
+}
+
+#logodiv{
+	margin-top: 20px;
+	margin-left: 20px;
+	width: 100px;
+}
+
+@media (min-width: 760px) {
+	header{
+		height: 100px;
+	}
+}

@@ -1,0 +1,432 @@
+@charset "utf-8";
+
+html {
+	box-sizing: border-box;
+  }
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	line-height: 1;
+	margin: 0;
+	background-color: white;
+}
+
+img {
+	max-width: 100%;
+	height: auto;	
+}
+
+:root{
+	--brand-color: #154569;
+	--bar-color: grey;
+	--trans-Time: 1;
+	--border-color:rgba(128, 128, 128, 0.322);
+}
+
+.wrapper {
+	width:100%;
+	height: 100vw;
+	background-color: white;	
+}
+.wrapper{
+	display: grid;
+	grid-template-rows: 3;
+  }
+  .wrapper > header{
+	grid-row-start: 1;
+  }
+  .wrapper > main{
+	grid-row-start: 2;
+  }
+  .wrapper > footer{
+	grid-row-start: 3;
+	justify-self: center;
+  }
+
+#logodiv{
+	margin-top: 20px;
+	margin-left: 20px;
+	width: 100px;
+  }
+
+header{
+	display: grid;
+	grid-template-rows: 2;
+	grid-template-columns: 1;
+}
+
+header >:nth-child(1){
+	grid-row-start: 1;
+	grid-column-start: 1;
+}
+header >:nth-child(2){
+	grid-row-start: 1;
+	grid-column-start: 1;
+	justify-self: right;
+	margin-top: 20px;
+}
+
+header >:nth-child(3){
+	grid-row-start: 2;
+	grid-column-start: 1;
+}
+
+/* Dropdown Menu */
+nav {
+	width: 100%;
+	height: 0;
+	visibility: hidden;
+	overflow: hidden;
+	background-color: var(--brand-color);
+}
+  
+nav.activated {
+	transition: height calc(var(--trans-Time)*1s) ease, visibility 0s 0.3s;
+}
+  
+.show nav {
+	transition: height calc(var(--trans-Time)*1s) ease, visibility 0s;
+	visibility: visible;
+	height: 210px;
+}
+  
+nav ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+  
+nav a {
+	text-decoration: none;
+	padding: 0 10px;
+	display: block;
+	border-right: none;
+	color: white;
+	border-bottom: none;
+	border-top: 2px solid white;
+	line-height: 40px;
+}
+  
+nav a:hover,
+nav a:active,
+nav a:focus {
+	outline: none;
+	background-color: rgba(255, 255, 255, 0.3);
+	color: white;
+}
+  
+/* Hamburger Style */
+.btn-menu {
+	margin: 0 20px 20px 0;
+	display: block;
+	width: 40px;
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+  
+.btn-menu .button-content {
+	display: block;
+	height: 100%;
+	cursor: pointer;
+  }
+  
+.btn-menu .text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+  
+.btn-menu .bar {
+	display: block;
+	height: 4px;
+	background-color: var(--bar-color);
+	width: 100%;
+	position: relative;
+	top: 10px;
+	transition: all 0.3s ease-in-out;
+}
+  
+.btn-menu .bar:before {
+	content: "";
+	width: 100%;
+	height: 4px;
+	top: 10px;
+	left: 0;
+	background-color:  var(--bar-color);
+	position: absolute;
+	transition: all 0.3s ease-in-out;
+}
+  
+.btn-menu .bar:after {
+	content: "";
+	width: 100%;
+	height: 4px;
+	top: -10px;
+	left: 0;
+	background-color:  var(--bar-color);
+	position: absolute;
+	transition: all 0.3s ease-in-out;
+}
+  
+.btn-menu:focus {
+	outline: none;
+  }
+  
+.btn-menu:focus .button-content {
+	outline: 5px solid #7683c9;
+}
+  
+.show .btn-menu .bar {
+	background-color: transparent;
+}
+  
+.show .btn-menu .bar:before {
+	top: 0;
+	transform: rotate(45deg);
+}
+  
+.show .btn-menu .bar:after {
+	top: 0;
+	transform: rotate(-45deg);
+}
+
+/* The styling for the bottom article section */
+.article-container-left,
+.article-container-right{
+	border-bottom: 1px solid var(--border-color);
+	padding: 20px;
+}
+#featureArticle{
+	border-bottom: 1px solid var(--border-color);
+	padding: 20px;
+}
+#half-article p[class='excerpt']{
+	display: none;
+}
+
+#half-article p[class='category']{
+	display: none;
+}
+#half-article p[class='tags']{
+	display: none;
+}
+
+/*Animation for the logo*/
+  #logodiv {
+	animation: moveForward 5s linear alternate;
+  }
+  
+  @keyframes moveForward {
+	0% {
+	  transform: translateX(0);
+	}
+
+	50% {
+	  transform: translateX(100%); /* Adjust the value to control the distance */
+	}
+	
+	100% {
+	transform: translateX(0); /* Adjust the value to control the distance */
+	}
+  }
+
+footer {
+	padding: 20px ;
+}
+
+/* Hides the sidebar articles when user is on mobile view */
+  #sidebarArticles{
+	display:none;
+  }
+
+/*styling the clickable links*/
+a {
+	text-decoration: none;
+	color: black;
+	font-weight: bold
+}
+
+a:hover {
+	color: var(--brand-color);
+}
+
+@media (min-width: 760px) {
+	header{
+		height: 100px;
+	}
+	#sidebarArticles{
+		display:block;
+	  }
+
+/*Styling the articles for the bottom page*/
+  .article-container-left,
+  .article-container-right {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 20px;
+	align-items: center;
+	margin-left: 70px;
+	margin-right: 70px;
+	margin-top: 50px;
+	border: 1px solid var(--border-color);
+	padding: 0;
+	min-height: 350px;
+  }
+  .article-container-left .image{
+	
+	display: flex;
+	justify-content: center;
+	border: red;
+  }
+
+  .text-content {
+	flex: 1;
+	margin-left: 10%;
+  }
+  .text-content-right{
+	margin-right: 10%;
+  }
+
+  .text-content h2 {
+	font-size: 24px;
+	margin-bottom: 20px;
+  }
+  
+  .text-content p {
+	font-size: 18px;
+  }
+  .text-content-right p{
+	font-size: 18px;
+
+  }
+
+  .image img {
+	max-width: 100%;
+	height: 100%;
+	object-fit: contain;
+	padding: 10px;
+  }
+
+  .text-content-right {
+	flex: 1;
+	order: 1;
+  }
+
+/* Navigation styling */
+	.btn-menu {
+	  display: none;
+	}
+  
+	nav {
+	  visibility: visible;
+	  height: 44px;
+	  background-color: var(--brand-color);
+	}
+  
+	nav ul {
+	  display: flex;
+	}
+  
+	nav li {
+	  flex: 1;
+	}
+  
+	nav a {
+	  color: white;
+	  text-decoration: none;
+	  line-height: 42px;
+	  text-align: center;
+	}
+  
+	nav a:hover,
+	nav a:active,
+	nav a:focus {
+	  background-color: #8b8b8b77;
+	  outline: none;
+	}
+
+/* Styling top page */
+	main{
+		padding: 20px;
+		display: grid;
+		grid-template-columns: 1;
+		grid-template-rows: 2;
+	}
+
+	#topPage{
+		display: grid;
+		gap : 40px;
+		grid-template-columns: 3fr 2fr;
+		grid-template-rows: 1;
+		margin-top: 20px;
+	}
+	#topPage :nth-child(1){
+		grid-column-start: 1;
+		grid-row-start: 1;
+	}
+	#topPage :nth-child(2){
+		grid-column-start: 2;
+		grid-row-start: 1;
+	}
+
+/* Styling side bar */
+	#sidebarArticles > div{
+		margin-bottom: 40px;
+		border-bottom: 1px solid var(--border-color);
+		padding-left: 25px;
+	}
+
+/* On desktop view, it will display the excerpt, category, and tags and hide the line under the feature article */
+	#half-article p[class='excerpt']{
+		display: block;
+	}
+	#half-article p[class='category']{
+		display: block;
+	}
+	#half-article p[class='tags']{
+		display: block;
+	}
+	#featureArticle{
+		border-bottom: none;
+	}
+
+	.circle {
+		display: inline-block;
+		width: 30px;
+		height: 30px;
+		background-color: var(--brand-color); 
+		border-radius: 50%;
+		text-align: center;
+		line-height: 30px;
+		color: white; 
+		font-size: small;
+		font-weight: bold;
+		margin-right: 6px; 
+		margin-left: 5px;
+	}
+
+	.text-content + .image {
+		border: 2px solid black; 
+	  }
+
+	  .text-content-right + .image {
+		border: 2px solid black; 
+	  }
+	  
+	  .excerpt ~ .published-date
+     {
+      font-weight: bold;
+	  font-style: italic;
+}
+
+  }
+
+

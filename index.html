@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>News Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i|Pacifico"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div id="logodiv">
+          <a href="#0"><img src="images/logo.png" alt="News Logo"/></a>
+        </div>
+
+        <!-- Hamburger button-->
+        <button class="btn-menu" id="btn-menu">
+          <span class="button-content">
+            <span class="text">Menu</span>
+            <span class="bar" id="bar"></span> 
+          </span>
+        </button>
+
+        <!-- Start of navigation-->
+        <nav id="main-navigation">
+          <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#languages">Program Languages</a></li>
+              <li><a href="#webdevelopment">Web Development</a></li>
+              <li><a href="#database">Database Management</a></li>
+              <li><a href="#cloud">Cloud Computing</a></li>
+          </ul>
+      </nav>
+      <!-- End of navigation -->
+      </header>
+      <main>
+        <!-- Top page starts -->
+        <section id="topPage">
+          <section>
+            <article id = "featureArticle">
+              <p class="category"> Web Development · <span class="tags"><a href="#">CSS</a></span></p>
+              <h2><a href="#">Elevating User Experiences through CSS Transitions and Animations in Web Design</a></h2>
+              <img src="images/css-image-02.png" alt="feature image"/>
+              <p class="published-date"><span class="author"> Tracy · </span> January 15, 2024</p>
+              <p class="excerpt">
+                To create a fun and enhancing experience for users, I have learned that as a Software 
+                Developer, we can implement transitions and animations to make a user's viewing experience more interesting.
+                CSS Transitions and Animations introduce a sense of seamless transformation between pages, employing fade
+                in/out effects to enhance the flow of a page.
+              </p>
+            </article>
+          </section>
+
+          <!-- Sidebar content starts -->
+          <section id = "sidebarArticles" display="none">
+            <h2 id ="sidebarh2">Popular Now In Software & Technology</h2>
+            
+            <div>
+              <h3 class="headLine"><span class="circle">1</span><a href="#">Mastering SQL: Tips and Techniques for Optimal Database Management</a>
+              </h3>
+              <p class="tags"><a href="#">SQL</a></p>
+              <div class="do-not-show" style="display: none;">
+                <p class="published-date"><span class="author"> Tracy · </span> January 17 2024</p>
+                <p class="excerpt">
+                  Database management is an important and powerful tool to efficiently handle and query relational databases.
+                  SQL which stands for 'Structured Query Language' is one of the most popular data management software that Software
+                  developers uses. I like using this data management when I am doing back-end coding because it is quite easy to use!
+                </p>
+                <p class="category">Database Management</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="headLine"><span class="circle">2</span><a href="#">Come Explore Sanrio Land with the use of Javascript!</a>
+              </h3>
+              <p class="tags"><a href="#">Javascript</a></p>
+              <div class="do-not-show" style="display: none;">
+                <p class="published-date"><span class="author"> Tracy · </span> January 15 2024</p>
+                <p class="excerpt">
+                  Utilizing  HTML, CSS, and Javascript, I was able to transform a traditional High-Low 
+                  game into a more engaging and immersive experience for Sanrio enthuasiasts. While trying to save 
+                  Sanrio Land, users are able to experience an auditory component when playing the game. Futhermore, 
+                  each time a user successfully completes the game, they are rewarded with a different and unique
+                  end screen character making every victory in the game a personalized achievement!
+                </p>
+                <p class="category">Web Development</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="headLine"><span class="circle">3</span><a href="#">Exploring the Power of JavaScript in Web Development</a>
+              </h3>
+              <p class="tags"><a href="#">Javascript</a></p>
+              <div class="do-not-show" style="display: none;">
+                <p class="published-date"><span class="author"> Samaneh · </span> January 17 2024</p>
+                <p class="excerpt">
+                  JavaScript is an integral part of web development, facilitating the 
+                  creation of engaging and user-friendly online experiences. It enables developers to 
+                  create interactive features such as forms validation, image sliders, and real-time updates. 
+                </p>
+                <p class="category">Web Development</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="headLine"><span class="circle">4</span><a href="#">Node.js 21 brings WebSocket client</a>
+              </h3>
+              <p class="tags"><a href="#">Node.js</p>
+              <div class="do-not-show" style="display: none;">
+                <p class="published-date"><span class="author"> Ayesha</span> January 15 2024</p>
+                <p class="excerpt">
+                  Node.js 21, the latest release of the open source cross-platform JavaScript runtime, has arrived, featuring a built-in WebSocket client and support for globs in the platform’s test runner.
+                  Announced October 17, Node.js 21 is equipped with an experimental, browser-compatible WebSocket implementation, enabled through the --experimental-websocket flag. 
+                  WebSocket enables two-way communication between a browser and server, with no need to poll the server for a reply.
+                </p>
+                <p class="category">Node.js</p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="headLine"><span class="circle">5</span><a href="#">Microsoft Releases ASP.NET WebHooks Preview</a>
+              </h3>
+              <p class="tags"><a href="#">Microsoft</a></p>
+              <div class="do-not-show" style="display: none;">
+                <p class="published-date"><span class="author"> Ayesha</span> January 15 2024</p>
+                <p class="excerpt">
+                  Webhook is a pattern for user-defined callbacks using HTTP. A client can subscribe to events of his choice and receive events, in the form of POST requests, when they happen. A key point of webhooks is that they use HTTP, meaning they do not require new infrastructure to use or implement them.
+                  ASP.NET WebHooks provides building blocks for both send and receive operations. 
+                  On the receiving side, it provides a common model for receiving and processing events from webhook providers. 
+                  On the sending side, it provides support for managing subscriptions and sending events.
+                </p>
+                <p class="category">Microsoft</p>
+              </div>
+            </div>
+          </section>
+          <!-- Sidebar content ends -->
+        </section>
+        <!-- Top page end -->
+
+
+        <!-- Bottom page starts -->
+        <section id=" bottomPage">
+          <section>
+            <article id = "half-article">
+              <div class="article-container-left">
+                <div class="text-content">
+                  <h2><a href="#">Come Explore Sanrio Land with the use of Javascript!</a></h2>
+                  <p class="excerpt">
+                    Utilizing  HTML, CSS, and Javascript, I was able to transform a traditional High-Low 
+                    game into a more engaging and immersive experience for Sanrio enthuasiasts. While trying to save 
+                    Sanrio Land, users are able to experience an auditory component when playing the game. Futhermore, 
+                    each time a user successfully completes the game, they are rewarded with a different and unique
+                    end screen character making every victory in the game a personalized achievement!
+                  </p>
+                  <p class="published-date"><span class="author"> Tracy · </span> January 15, 2024</p>
+                  <p class="category"><span class="tags"> Program Languages · </span> <a href="#">Javascript</a></p>
+                </div>
+                <div class="image">
+                <img src="images/tracy-image-01.png" alt="sanrio project screenshot"/>
+                </div>
+              </div>
+              
+              <div class="article-container-right">
+                <div class="text-content-right">
+                  <h2><a href="#">Elevating Web Design with Advanced CSS Grid Techniques</a></h2>
+                  <p class="excerpt">
+                    CSS Grid is a powerful layout system in web development that enables 
+                    the creation of flexible and responsive designs. It provides me with precise control over 
+                    the placement and alignment of elements and simplifies the complexities of layout 
+                    design.
+                  </p>
+                  <p class="published-date"><span class="author"> Samaneh · </span> January 16, 2024</p>
+                  <p class="category"><span class="tags"> Web Development · </span> <a href="#">CSS</a></p>
+                </div>
+                <div class="image">
+                  <img src="images/css-image.jpg" alt="feature image"/>
+                </div>
+              </div>
+
+              <div class="article-container-left">
+                <div class="text-content">
+                  <h2><a href="#">React Calculator, Where Math Meets React</a></h2>
+                  <p class="excerpt">
+                    React Calculator is interactive user interface for performing mathematical 
+                    calculations. Integrating state management within React, a calculator project can efficiently 
+                    handle user input, update display elements, and execute precise mathematical operations. 
+                    CSS Grid, allowed flexible approach to precisely define the placement of calculator components.
+                  </p>
+                  <p class="published-date"><span class="author"> Samaneh · </span> January 17, 2024</p>
+                  <p class="category"><span class="tags"> Web Development · </span> <a href="#">React</a></p>
+                </div>
+                <div class="image">
+                  <img src="images/calculator.jpg" alt="calculator" style="height: 300px;"/>
+                </div>
+              </div>
+
+              <div class="article-container-right">
+                <div class="text-content-right">
+                  <h2><a href="#">Code to Riches: HTML, CSS, and JavaScript on the Millionaire Stage</a></h2>
+                  <p class="excerpt">
+                    'Who Wants to Be a Millionaire', a classic TV quiz show, has now been transformed into an engaging web game that brings challenging questions 
+                    and thrilling game show vibes straight to your screen. Developed using HTML, CSS, and JavaScript, this game promises an exciting journey of knowledge and entertainment."
+                    When I first saw 'Who Wants to Be a Millionaire', I was captivated by the suspense and the intellectual challenge. 
+                    This inspired me to recreate that experience in a web game format.The journey was filled with learning curves, especially in implementing real-time game logic 
+                    using JavaScript and designing an appealing, user-friendly interface with HTML and CSS...
+                  </p>
+                  <p class="published-date"><span class="author"> Ayesha · </span> January 17, 2024</p>
+                  <p class="category"><span class="tags"> Program Languages · </span> <a href="#">HTML, CSS & Javascript</a></p>
+                </div>
+                <div class="image">
+                  <img src="images/WWTBM.JPG" alt="feature image"/>
+                </div>
+              </div>
+              
+              <div class="article-container-left">
+                <div class="text-content">
+                  <h2><a href="#">Mastering Stored Procedures in SQL: The Power Behind Efficient Databases</a></h2>
+                  <p class="excerpt">
+                    A stored procedure in SQL is a pre-written and compiled set of SQL commands that are stored within the database catalog. 
+                    A stored procedure can be called by an application or triggered by events in the database. 
+                    It allows for variable declarations, conditional operations, and other powerful programming features.
+                    The key advantages include Performance Improvement by database engine time by not compiling SQL code everytime it
+                    runs. Ntwork traffic reduction , reusability and complexity hididing can serve as its important features.
+                  </p>
+                  <p class="published-date"><span class="author"> Ayesha · </span> January 18, 2024</p>
+                  <p class="category"><span class="tags"> Program Languages · </span> <a href="#">SQL - Stored Proceudre</a></p>
+                </div>
+                <div class="image">
+                  <img src="images/stored-procedure.JPG" alt="feature image"/>
+                </div>
+              </div>
+            </article>
+          </section>
+        </section>
+        <!-- Bottom page ends -->
+      </main>
+      <footer>
+        <p>&copy; 2024 Samaneh - Tracy - Ayesha</p>
+      </footer>
+    </div>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>
